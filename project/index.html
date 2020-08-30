@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/sodial_button/bootstrap-social.css">
+</head>
+<body>
+    <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white font-weight-bold sticky-top" dir="ltr">
+            
+           <a class="navbar-brand" href="index.html">
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjIuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICB3aWR0aD0iMTA4cHgiIGhlaWdodD0iMTdweCIgdmlld0JveD0iMCAwIDEwOCAxNyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTA4IDE3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0iIzRhODlkYyIgZD0iTTU0LjI4MSw1Ljc3M2MwLjA2Ni0xLjI2OSwwLjUyMS0yLjMwNiwxLjIzMi0zLjExNVYxLjU4aC0wLjk0NWMtMS45MSwwLTMuNTI3LDAuNzMyLTQuNDY3LDIuMzg2aC0wLjA1NQogIFYxLjc2MmgtNC44OTl2MTMuNDQxaDQuOVY5Ljc3N2MwLTIuMzAzLDAuNjc0LTQuMDU5LDMuMzkzLTQuMDU5QzUzLjczNiw1LjcyLDU0LjAxMyw1LjczNyw1NC4yODEsNS43NzN6Ii8+CjxwYXRoIGZpbGw9IiM0YTg5ZGMiIGQ9Ik05MS4zOCw1LjcyNGMwLjQwNy0xLjE4OCwxLjA2Ny0yLjI0NiwxLjkyNS0zLjA5NXYtMS4wNWgtMC45NDNjLTEuOTExLDAtMy41MjYsMC43MzItNC40NzEsMi4zODVoLTAuMDUzCiAgVjEuNzYyaC00LjkwMnYxMy40NDFoNC45MDJWOS43NzdjMC0yLjMwMywwLjY3Ni00LjA1OSwzLjM5NS00LjA1OUw5MS4zOCw1LjcyNHoiLz4KPHBhdGggZmlsbD0iIzRhODlkYyIgZD0iTTY0LjIzMiw1LjIyYy0wLjc1Ni0wLjM5My0xLjgwOC0wLjY1NS0yLjY0NS0wLjY1NWMtMC41NjIsMC0xLjUzMywwLjIzNC0xLjUzMywwLjkxNwogIGMwLDAuOTE4LDEuNTMzLDEuMDQ4LDIuMjExLDEuMTgyYzIuMjg0LDAuNDQ0LDQuMDEyLDEuNDkzLDQuMDEyLDMuOTc5YzAsMy41MzYtMy4zMTMsNS4wMDgtNi41Miw1LjAwOAogIGMtMS45NjcsMC0zLjkwMi0wLjU1MS01LjU3NC0xLjU0N2wxLjc3Ny0zLjMzYzAuOTk1LDAuNjg0LDIuNjY1LDEuMzYzLDMuODc3LDEuMzYzYzAuNjIsMCwxLjUzNS0wLjI4NywxLjUzNS0xLjAyMQogIGMwLTEuMDQ4LTEuNTM1LTEuMTAzLTMuMDcyLTEuNDk1Yy0xLjUzMy0wLjM5My0zLjA2Ni0xLjEyNS0zLjA2Ni0zLjUzNmMwLTMuMzAyLDMuMDY2LTQuNzY3LDYuMDg4LTQuNzY3CiAgYzEuNTYyLDAsMy4xMjUsMC4yMzUsNC41NDksMC44NjRMNjQuMjMyLDUuMjJ6Ii8+CjxwYXRoIGZpbGw9IiM0YTg5ZGMiIGQ9Ik0xMDgsMTUuMjAzaC00Ljl2LTEuNDk1aC0wLjA1NGMtMC44NjIsMS4zMzYtMi41NjIsMS45MzgtNC4xNzUsMS45MzhjLTQuMDk2LDAtNi45NzUtMy4zMjgtNi45NzUtNy4xOAogIGMwLTMuODQ4LDIuODI4LTcuMTUxLDYuOTItNy4xNTFjMS41ODgsMCwzLjI2LDAuNTc2LDQuMjgzLDEuNzU0VjEuNzYyaDQuODk5TDEwOCwxNS4yMDNMMTA4LDE1LjIwM3ogTTk2Ljk1OSw4LjQ5NQogIGMwLDEuNzAyLDEuMTYsMy4wMTIsMy4xNSwzLjAxMmMxLjk5MiwwLDMuMTQ3LTEuMzA4LDMuMTQ3LTMuMDEyYzAtMS42NTEtMS4xNTUtMy4wMzktMy4xNDctMy4wMzkKICBDOTguMTE5LDUuNDU3LDk2Ljk1OSw2Ljg0NCw5Ni45NTksOC40OTV6Ii8+CjxwYXRoIGZpbGw9IiM0YTg5ZGMiIGQ9Ik04Mi4xNjMsOS4yODNINzEuODQ2YzAsMS45MzcsMS4wNTMsMi45ODQsMy4wNzIsMi45ODRjMS4wNSwwLDEuODAzLTAuMzM5LDIuMzQzLTEuMjMxaDQuNzE0CiAgYy0wLjc4MSwzLjE3MS0zLjg3OSw0LjYxMi03LjAyOSw0LjYxMmMtNC41NzUsMC03Ljk5NS0yLjUxNy03Ljk5NS03LjE1MmMwLTQuNDgsMy4xNDctNy4xNzgsNy42NDQtNy4xNzgKICBjNC43OTMsMCw3LjU3LDIuODgzLDcuNTcsNy40NjZMODIuMTYzLDkuMjgzTDgyLjE2Myw5LjI4M3ogTTc3LjYxMSw2LjUzYy0wLjI0My0xLjI4NC0xLjQ1NS0yLjEyMi0yLjc3My0yLjEyMgogIGMtMS40MjksMC0yLjYwOSwwLjczMS0yLjkxLDIuMTIySDc3LjYxMXoiLz4KPGc+CiAgPGc+CiAgICA8cGF0aCBmaWxsPSIjNGE4OWRjIiBkPSJNMjkuNTYxLDguMjYxYy0wLjAwNS0wLjExNi0wLjAxMy0wLjIyOS0wLjAyMi0wLjM0NGMwLDAsMC0wLjAwMSwwLTAuMDAyYzAsMCwwLTAuMDAxLDAtMC4wMDIKICAgICAgYy0wLjExLTEuMjQ3LTAuNTIyLTIuNDE0LTEuMjIxLTMuNDY4Yy0wLjMxMi0wLjQ3LTAuNjY5LTAuODk3LTEuMDY4LTEuMjhjLTAuNTgzLTAuNTYxLTEuMjU4LTEuMDI1LTIuMDE5LTEuMzkyCiAgICAgIGMtMS4xNDUtMC41NDctMi40MS0wLjgyMy0zLjc2LTAuODIzYy0wLjEzMiwwLTAuMjcsMC4wMDItMC40MDksMC4wMDdDMjAuMTE0LDEsMTkuMTk3LDEuMTgsMTguMzM1LDEuNDk3CiAgICAgIGMtMC44NjksMC4zMTQtMS42MjYsMC43MjktMi4yNDUsMS4yMjdjLTAuMTI2LDAuMS0wLjI2MywwLjIyMy0wLjQxLDAuMzU4bC0wLjEwNiwwLjEwNEwxNS40MjksMy4zNGgwLjAwMWgwLjAwMWwtMC4wNjgsMC4wNjcKICAgICAgTDE1LjMzLDMuNDQzbC0wLjE3MywwLjE4MmMtMC4xMjgsMC4xNDQtMC4yNSwwLjI4OC0wLjM2NCwwLjQyOWwtMC4wMDEtMC4wMDJsLTAuMDA0LTAuMDA0Yy0wLjIzNywwLjI4OC0wLjQ1NiwwLjU4Ni0wLjYxNywwLjg1NAogICAgICBjLTAuMTA5LDAuMTcyLTAuMjE2LDAuMzQ5LTAuMzE4LDAuNTI2TDEyLjQ0LDguMjg1bDAuMDAyLDAuMDAybC0wLjA3NCwwLjE0NWwtMC4xNTYsMC4zMTZjLTAuMzEsMC42MjctMC42NDIsMS4yNTItMS4wMTMsMS43NjgKICAgICAgYy0wLjgyNywwLjkwNy0xLjc2MiwxLjM1MS0yLjk2NCwxLjM1MWMtMC4wODQsMC0wLjE3LTAuMDA0LTAuMjU4LTAuMDA5Yy0wLjcyNC0wLjAyOS0xLjM0NS0wLjItMS44OTYtMC41MjYKICAgICAgYy0wLjA1OS0wLjAzNS0wLjExNi0wLjA3MS0wLjE3MS0wLjEwOGMtMC40NS0wLjI5OS0wLjc5NS0wLjY4My0xLjA1My0xLjE2MmMtMC4yOTEtMC41NDMtMC40Mi0xLjA5OC0wLjQwMi0xLjY4NgogICAgICBDNC40NTYsOC4zNiw0LjQ1Nyw4LjM0Niw0LjQ1Nyw4LjMzM0M0LjQ5Niw3LjM5Nyw0Ljg1Myw2LjY2OSw1LjU3Miw2LjA0QzUuNzQ3LDUuODg5LDUuOTMsNS43NjEsNi4xMjEsNS42NDcKICAgICAgYzAuMDI3LTAuMDE2LDAuMDU0LTAuMDMxLDAuMDgxLTAuMDQ1YzAuNTM0LTAuMjkxLDEuMTQyLTAuNDM2LDEuODM5LTAuNDM2bDAuMjE3LDAuMDA2QzkuMzY1LDUuMjE0LDEwLjIxOSw1LjU2LDEwLjksNi4yMzUKICAgICAgTDEzLjAzNiwyLjRjLTAuNTExLTAuMzQyLTEuMDg4LTAuNjM2LTEuNzI0LTAuODc1Yy0wLjAyNC0wLjAwOS0wLjA0OS0wLjAxOS0wLjA3NC0wLjAyN2MtMC4wNzYtMC4wMjctMC4xNTEtMC4wNTUtMC4yMjktMC4wOAogICAgICBDMTAuMzMzLDEuMTkyLDkuNjI0LDEuMDUzLDguODk0LDAuOTlsMCwwQzguODc2LDAuOTg3LDguODU2LDAuOTg1LDguODM4LDAuOTgzQzguNzI2LDAuOTc2LDguNjEyLDAuOTYyLDguNSwwLjk1NwogICAgICBDOC4zNzgsMC45NTIsOC4yNTUsMC45NSw4LjEzNSwwLjk0OUg4LjA2NmMtMS4zNDMsMC4wMDUtMi41OTEsMC4yOC0zLjczMiwwLjgyNUMzLjA1NiwyLjM5LDIuMDIsMy4yODcsMS4yNTIsNC40NDMKICAgICAgQzAuNDg2LDUuNTk5LDAuMDY4LDYuODgyLDAuMDA4LDguMjU5QzAuMDAzLDguMzc3LDAsOC40OTQsMCw4LjYwOWMtMC4wMDEsMS45MjYsMC43MDEsMy42MiwyLjA5Nyw1LjA0MgogICAgICBjMS40NTcsMS40OTIsMy4zNTIsMi4yOTYsNS42MjcsMi4zOTFjMC4xNDYsMC4wMDYsMC4yOSwwLjAxLDAuNDM0LDAuMDFjMS4yODcsMCwyLjQ3OC0wLjIyOSwzLjU0Ni0wLjY4NwogICAgICBjMC4yNjctMC4xMTQsMC41MjYtMC4yNDgsMC43OTEtMC4zOTdjMC4xNDQtMC4wODMsMC4yOC0wLjE3MSwwLjQxNS0wLjI2NWwwLjEtMC4wNjdsMC4xNjgtMC4xMTUKICAgICAgYzAuMjAyLTAuMTQ1LDAuMzkxLTAuMzAyLDAuNTc1LTAuNDY5bDAuMDY0LTAuMDYxYzAuMTA4LTAuMTAzLDAuMjE2LTAuMjA3LDAuMzE4LTAuMzE0bDAuMzgzLTAuNDMzbDAuMTQ2LTAuMTgzbDAuMDY4LTAuMQogICAgICBsMC4wNjgtMC4wOThjMC41NjktMC45NTYsMi40MjEtNC40MzUsMi40MjEtNC40MzVWOC40MjFsMC4xMS0wLjIxMmwwLjA5Mi0wLjE2NmMwLjI3My0wLjQ5NywwLjQ3LTAuODUsMC43MzEtMS4yMjFsMC4wMDctMC4wMTEKICAgICAgYzAuNjA5LTAuODgzLDEuNjU2LTEuNTEyLDIuODktMS42MThjMi4wNy0wLjE3OCwzLjg4NCwxLjE4Miw0LjA1MSwzLjAzOGMwLjE2NiwxLjg1Ni0xLjM3OCwzLjUwNS0zLjQ0OCwzLjY4NAogICAgICBjLTAuNDMxLDAuMDM3LTAuODUsMC4wMDgtMS4yNDUtMC4wNzlsLTAuMDEsMC4wMDRjLTEuNTE5LTAuMzE2LTIuNDg2LTEuNDI0LTIuOTYzLTEuOTE5bC0xLjk5MiwzLjY2MwogICAgICBjMCwwLDAuNjE5LDAuNjI0LDEuMDQzLDAuOTM2YzAuNDI1LDAuMzExLDAuOTc0LDAuNjE3LDEuNDEyLDAuODA3YzEuMDYzLDAuNDU0LDIuMjE5LDAuNzI2LDMuNDk2LDAuNzI2CiAgICAgIGMwLjE0OCwwLDAuMTE4LDAsMC4yNzItMC4wMDZjMi4yNzMtMC4wOTUsNC4yOTktMC45NjYsNS43Ni0yLjQ1OGMxLjM4NC0xLjQxNywyLjEzNS0zLjAzNSwyLjE0Mi00Ljk1VjguNTgyCiAgICAgIEMyOS41NjgsOC40NzYsMjkuNTY1LDguMzY5LDI5LjU2MSw4LjI2MXoiLz4KICA8L2c+CjwvZz4KPGc+CiAgPHBhdGggZmlsbD0iIzRhODlkYyIgZD0iTTM3LjE4MSwxNS42NTdjLTEuMDMzLDAtMS45Ny0wLjEyLTIuODExLTAuMzZjLTAuODQxLTAuMjQtMS41NTktMC42MTktMi4xNTQtMS4xMzkKICAgIGMtMC41OTctMC41Mi0xLjA1Ny0xLjE4Mi0xLjM4MS0xLjk4NXMtMC40ODYtMS43NzEtMC40ODYtMi44OTlWMS43NTloNC43Mjd2Ny40NTVjMCwwLjg0NSwwLjIwMiwxLjQ1NywwLjYwNSwxLjgzOQogICAgYzAuNDA0LDAuMzgzLDAuOTE3LDAuNTc0LDEuNTM5LDAuNTc0YzAuNjM2LDAsMS4xNTItMC4xNzgsMS41NS0wLjUzNWMwLjM5Ni0wLjM1NywwLjU5Ni0wLjk0OSwwLjU5Ni0xLjc4MVYxLjc1OWg0LjcyN3Y3LjQxNgogICAgYzAsMS4xNjgtMC4xNjYsMi4xNjEtMC40OTcsMi45NzhjLTAuMzMxLDAuODE4LTAuNzk4LDEuNDg2LTEuMzk5LDIuMDA2Yy0wLjYwNCwwLjUyLTEuMzMxLDAuODk4LTIuMTg2LDEuMTM5CiAgICBDMzkuMTU2LDE1LjUzNywzOC4yMTMsMTUuNjU3LDM3LjE4MSwxNS42NTd6Ii8+CjwvZz4KPC9zdmc+" alt="">
+            </a>
+
+            <button class="navbar-toggler d-lg-none mr-auto" type="button" data-toggle="collapse" data-target="#searchcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                </svg>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+<!-- search box in large mode -->
+            <form action="#" class="form-inline d-lg-block d-none">
+                <div class="input-group mb-3 mt-3">
+                <input type="text" class="form-control" placeholder="جستجو" aria-label="search" aria-describedby="basic-addon1">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                </div>
+            </form>
+<!-- search box in small mode -->
+            <div class="collapse navba-collapse" id="searchcollapse">
+                <div class="mt-2">
+                    <form action="#" class="form-inline d-lg-none flex-flow">
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="جستجو" aria-label="search" aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <p>برترین موضوعات</p>
+                    </div>
+                    <!-- <h3>برترین موضوعات</h3> -->
+                    <div class="col-md-3 col-6 p-1">
+                        <img src="img/learning1.jpeg" alt="xxx" class="img-fluid" height="200px;">
+                    </div>
+                    <div class="col-md-3 col-6 p-1">
+                        <img src="img/learning1.jpeg" alt="xxx" class="img-fluid">
+                    </div>
+                    <div class="col-md-3 col-6 p-1">
+                        <img src="img/learning1.jpeg" alt="xxx" class="img-fluid">
+                    </div>
+                    <div class="col-md-3 col-6 p-1">
+                        <img src="img/learning1.jpeg" alt="xxx" class="img-fluid">
+                    </div>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">موضوع پر طرفدار اول</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">موضوع پر طرفدار دوم</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">موضوع پر طرفدار سوم</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">موضوع پر طرفدار چهارم</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">موضوع پر طرفدار پنجم</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">موضوع پر طرفدار ششم</a>
+                    </li>
+                </ul>
+            </div>
+<!-- collapse navbar -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mt-2">
+                    <li class="nav-item">
+                        <a href="#sign-up-modal" class="btn btn-block btn-primary mb-lg-1 mb-2" data-toggle="modal">join fo free</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link d-lg-block d-none" href="#log-in-modal" data-toggle="modal">Login<span class="sr-only">(current)</span></a>
+                        <a class="btn btn-primary d-lg-none d-block" href="#log-in-modal" data-toggle="modal">Login<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="accademt.html">for students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">for professional</a>
+                    </li>
+                </ul>
+
+                
+            </div>
+        </nav>
+<!-- sign-up & log-in modal -->
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  <!-- style="opacity: 0.7;" -->
+<!-- sign up Modal -->
+  <div class="modal" id="sign-up-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <button type="button" class="btn-block btn-danger btn btn-lg" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" >close</span>
+    </button>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0" style="background-color: unset;">
+        <div class="modal-header text-white d-flex flex-column align-items-center" >
+            <h1 class="font-weight-bolder">corsera</h1>
+            <p>Learn skills from top universities for free.</p>    
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button type="button" class="btn btn-block btn-link" id="signup-login">Login</button>
+            </div>
+            <div class="col text-center bg-white">
+                <button type="button" class="btn btn-block btn-link" id="#" disabled>Sign up</button>
+            </div>
+        </div>
+        <div class="modal-body bg-white">
+            <a class="btn btn-block btn-social btn-google">
+                <span class="fa fa-google"></span> Sign in with Google
+            </a>
+            <a class="btn btn-block btn-social btn-facebook">
+                <span class="fa fa-facebook-square"></span> Sign in with Facebook
+            </a>
+            <a class="btn btn-block btn-social btn-instagram">
+                <span class="fa fa-instagram"></span> Sign in with Instagram
+            </a>
+<hr>
+            <form action="#" class="my-4 font-weight-bold">
+                <div  class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="form-control form-control-lg" placeholder="full name">
+                </div>
+                <div  class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control form-control-lg" placeholder="email@mail.com">
+                </div>
+                <div  class="form-group">
+                    <label for="paswd">Password:</label>
+                    <input type="password" id="paswd" class="form-control form-control-lg" placeholder="password">
+                </div>
+                <button type="submit" class="btn btn-block btn-primary font-weight-bold">join for free</button>
+            </form>
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center bg-white">
+            <hr class="half-hr">
+            <span>or</span>
+            <hr class="half-hr">
+        </div>
+        <div class="modal-footer border-0 bg-white justify-content-center">
+            <a href="#" class="my-4 text-center">Login whit your organization</a>
+            <p class="text-center mb-4">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- log in modal  -->
+  <div class="modal" id="log-in-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <button type="button" class="btn-block btn-danger btn btn-lg" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" >close</span>
+    </button>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0" style="background-color: unset;">
+        <div class="modal-header text-white d-flex flex-column align-items-center" >
+            <h1 class="font-weight-bolder">corsera</h1>
+            <p>Learn skills from top universities for free.</p>    
+        </div>
+        <div class="row">
+            <div class="col text-center bg-white">
+                <button type="button" class="btn btn-block btn-link" disabled>Login</button>
+            </div>
+            <div class="col text-center">
+                <button type="button" class="btn btn-block btn-link" id="login-signup" >Sign up</button>
+            </div>
+        </div>
+        <div class="modal-body bg-white">
+            <a class="btn btn-block btn-social btn-google">
+                <span class="fa fa-google"></span> Sign in with Google
+            </a>
+            <a class="btn btn-block btn-social btn-facebook">
+                <span class="fa fa-facebook-square"></span> Sign in with Facebook
+            </a>
+            <a class="btn btn-block btn-social btn-instagram">
+                <span class="fa fa-instagram"></span> Sign in with Instagram
+            </a>
+<hr>
+            <form action="#" class="my-4 font-weight-bold">
+                <div  class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control form-control-lg" placeholder="email@mail.com">
+                </div>
+                <div  class="form-group">
+                    <label for="paswd">Password:</label>
+                    <input type="password" id="paswd" class="form-control form-control-lg" placeholder="password">
+                </div>
+                
+                <div class="float-right mt-1 mb-3">
+                    <a href="#">forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary font-weight-bold">log in</button>
+            </form>
+        </div>
+        <div class="d-flex justify-content-between align-items-center bg-white">
+            <hr class="half-hr">
+            <span>or</span>
+            <hr class="half-hr">
+        </div>
+        <div class="modal-footer border-0 bg-white justify-content-center">
+            <a href="#" class="my-4 text-center">Login whit your organization</a>
+            <p class="text-center mb-4">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <header class="position-relative">
+            <div class="row">
+                <div class="col-lg-1" style="background:  rgb(50,0,100); margin: 0; padding: 0;"></div>
+                <div class="col-lg-10 col-12 img-gradient d-lg-block d-none" style="margin: 0; padding: 0;">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/hero-banner/robot-girl.jpg?auto=format%2Ccompress&dpr=1" alt="" class="img-fluid">
+                </div>
+
+                <div class="col-lg-10 col-12 img-light-gradient d-lg-none" style="margin: 0; padding: 0;">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/hero-banner/robot-girl.jpg?auto=format%2Ccompress&dpr=1" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-1" style="background:  rgb(50,0,100)" style="margin: 0; padding: 0;"></div>
+            </div>
+
+            <div class="position-absolute text-white text-left text-wrap d-lg-block d-none" style="top: 50%; left: 30%; transform: translate(-50%, -50%); max-width: 50%;">
+                <h1 class="h2 font-weight-bolder">Your Course to Success</h1>
+                <h3 class="h5">Build skills with courses, certificates, and degrees <br> online from world-class universities and companies</h3>
+                <a href="#" class="btn btn-lg btn-outline-primary text-white">join fo free</a>
+            </div>
+
+            <div class="position-absolute text-white text-center text-wrap d-lg-none" style="top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 80%;">
+                <h1 class="h4 font-weight-bolder">Your Course to Success</h1>
+                <h3 class="h6 d-md-block d-none">Build skills with courses, certificates, and degrees online from world-class universities and companies</h3>
+                <h3 class="small d-md-none d-block">Build skills with courses, certificates, and degrees online from world-class universities and companies</h3>
+                <a href="#" class="btn btn-sm btn-outline-primary text-white">join fo free</a>
+            </div>
+        </header>
+
+<!-- sponser brand -->
+        <section class="container-fluid" dir="ltr">
+            <div class="text-center mt-4">
+                <a href="#">We collaborate with 200+ leading universities and companies</a>
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-4 mt-4">
+                <!-- <div class="col-lg-1 col-1 d-lg-block d-md-none"></div> -->
+                <!-- <div class="col-lg-1 col-1 d-lg-block d-md-none"></div> -->
+                <div class="col-lg-1 col-6 my-2 offset-lg-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/illinois.svg?auto=format%2Ccompress&dpr=2&w=&h=32" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-1 col-6 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/duke.svg?auto=format%2Ccompress&dpr=2&w=&h=37" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-1 col-6 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/google.png?auto=format%2Ccompress&dpr=2&w=&h=37" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-1 col-6 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/umich.png?auto=format%2Ccompress&dpr=2&w=&h=55" alt="">
+                    </a>
+                </div>
+
+                
+                <div class="col-lg-1 col-6 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/ibm.png?auto=format%2Ccompress&dpr=2&w=&h=32" alt="">
+                    </a>
+                </div>
+                
+                <div class="col-lg-1 col-6 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/imperial.png?auto=format%2Ccompress&dpr=2&w=&h=35" alt="">
+                    </a>
+                </div>
+                
+                <div class="col-lg-1 col-6 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/stanford.svg?auto=format%2Ccompress&dpr=2&w=&h=27" alt="">
+                    </a>
+                </div>
+                
+                <div class="col-lg-1 col-2 my-2">
+                    <a href="#">
+                        <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/partners/penn.svg?auto=format%2Ccompress&dpr=2&w=&h=37" alt="">
+                    </a>
+                </div>
+                <!-- <div class="col-lg-1 col-1 d-lg-block d-md-none"></div> -->
+                <!-- <div class="col-lg-1 col-1 d-lg-block d-md-none"></div> -->
+            </div>
+            <hr>
+
+        </section>
+
+<!-- goals -->
+        <section class="text-center container">
+            <h1 class="mt-5 font-weight-bold">Achieve your goals with Coursera</h1>
+            <div class="row row-cols-md-4 row-cols-1 mt-5">
+                <div class="col px-5">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/achieve-your-goals/SvgaLearn.svg?auto=format%2Ccompress&dpr=2&w=&h=55" alt="xxx" width="64px%">
+                    <h4 class="text-muted mt-4">Learn the latest skills</h4>
+                    <p>like business analytics, graphic design, Python, and more</p>
+                </div>
+                <div class="col px-5">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/achieve-your-goals/teacher-img.svg?auto=format%2Ccompress&dpr=2&w=&h=55" alt="xxx" class="" width="64px">
+                    <h4 class="text-muted mt-4">Get ready for a career</h4>
+                    <p>in high-demand fields like IT, AI and cloud engineering</p>
+                </div>
+                <div class="col px-5">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/achieve-your-goals/SvgaColorCertificate.svg?auto=format%2Ccompress&dpr=2&w=&h=55" alt="xxx" class="" width="64px">
+                    <h4 class="text-muted mt-4">Earn a certificate or degree</h4>
+                    <p>from a leading university in business, computer science, and more</p>
+                </div>
+                <div class="col px-5">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/achieve-your-goals/SvgaCommunity.svg?auto=format%2Ccompress&dpr=2&w=&h=55" alt="xxx" class="" width="64px">
+                    <h2 class="text-muted mt-4">Upskill your organization</h2>
+                    <p>with on-demand training and development programs</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="row py-5 my-5" style="background-color: #ccf3ff;">
+
+                <div class="col  d-lg-flex d-none justify-content-end">
+                    <img class="img-flui" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/achieve-your-goals/promoStat.png?auto=format%2Ccompress&dpr=1&w=445&h=250&q=40" alt="">
+                </div>
+
+                
+                <div class="col d-flex justify-content-lg-start justify-content-center">
+                    <div style="max-width: 60%;">
+                        <h3 class="pb-3 font-weight-bold">Learner outcomes on Coursera</h3>
+                        <h5>87% of people learning for professional development report career benefits like getting a promotion, a raise, or starting a new career</h5>
+                        <p>- Coursera Learner Outcomes Survey (2019)</p>
+                        <a href="#" class="btn btn-primary">join for Free</a>
+                        <a href="#" class="btn btn-outline-primary mt-sm-0 mt-2">Try Coursera for Business</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5 text-center">
+            <h2 class="font-weight-bold py-5">World-class learning for anyone, anywhere</h2>
+        </section>
+
+        <section class="d-flex justify-content-center my-5">
+            <div class="row">
+                <div class="col-lg-6 col-12 d-flex  justify-content-lg-end justify-content-center align-items-center my-3">
+                    <div style="max-width: 450px;">
+                        <h6 class="text-uppercase">Top Quality</h6>
+                        <h4>Learn from leading universities and companies</h4>
+                        <p>Start streaming on-demand video lectures today from top instructors in subjects like
+                            <a href="#" class="font-weight-bold text-dark text-decoration-none">business,</a>
+                            <a href="#" class="font-weight-bold text-dark text-decoration-none">computer science,</a>
+                            <a href="#" class="font-weight-bold text-dark text-decoration-none">data science.</a>
+                            <a href="#" class="font-weight-bold text-dark text-decoration-none">language learning</a>
+                            & more  
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center my-3">
+                    <div>
+                        <div>Andrew Ng, Founder, deeplearning.ai; Coursera, Co-Founder</div>
+                        <div class="" style="max-width: 700px;">
+                            <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/how-it-works/andrewng.png?auto=format%2Ccompress&dpr=2&w=695&h=588&q=40" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="d-flex justify-content-center my-5">
+            <div class="row">
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center my-3">
+                    <div>
+                        <div class="" style="max-width: 336px;">
+                            <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/how-it-works/offerings2.png?auto=format%2Ccompress&dpr=2&w=336&h=350&q=40" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-end justify-content-center align-items-center my-3">
+                    <div style="max-width: 450px;">
+                        <h6 class="text-uppercase">ACCESSIBLE</h6>
+                        <h4>Find flexible, affordable options</h4>
+                        <p>Choose from many options including free courses and <a href="#" class="font-weight-bold text-dark text-decoration-none">university degrees</a> at a breakthrough price. Learn at your own pace, 100% online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="d-flex justify-content-center my-5">
+            <div class="row">
+                <div class="col-lg-6 col-12 d-flex  justify-content-lg-end justify-content-center align-items-center my-3">
+                    <div style="max-width: 450px;">
+                        <h6 class="text-uppercase">APPLIED LEARNING</h6>
+                        <h4>Master skills with in-depth learning</h4>
+                        <p>
+                            Apply what you learn with <b>self-paced quizzes and hands-on projects</b>. Get feedback from a global community of learners
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center my-3">
+                    <div>
+                        <div class="" style="max-width: 800px;">
+                            <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/how-it-works/quizCompletion.png?auto=format%2Ccompress&dpr=2&w=820&h=555&q=40" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="d-flex justify-content-center my-5">
+            <div class="row">
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center my-3">
+                    <div>
+                        <div class="" style="max-width: 423px;">
+                            <img class="img-fluid" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/how-it-works/certificates4.png?auto=format%2Ccompress&dpr=2&w=446&h=341&q=40" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-end justify-content-center align-items-lg-center my-3">
+                    <div style="max-width: 450px;">
+                        <h6 class="text-uppercase">SHAREABLE CERTIFICATES</h6>
+                        <h4>Earn industry-recognized credentials</h4>
+                        <p>
+                            Demonstrate your new skills by sharing your Course Certificate, 
+                            <a href="#" class="font-weight-bold text-dark text-decoration-none"> Professional Certificate,</a>
+                            <a href="#" class="font-weight-bold text-dark text-decoration-none">MasterTrack™ Certificate,</a>
+                             or diploma with your network.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- slider -->
+        <section class="d-flex justify-content-center my-5 container">
+            <div class="row">
+                <div class="col-12 text-center my-5">
+                    <h3 class="font-weight-bolder">From the Coursera community</h3>
+                    <h4 class="text-muted mt-4">60+ million people are already learning on Coursera</h4>
+                </div>
+
+                <div class="col-12">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <img class="card-img" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/social-proof/kara.png?auto=format%2Ccompress&dpr=1&w=270&h=202&q=40" alt="">
+                                        <div class="card-body text-center d-md-block d-none">
+                                            <div class="card-title">
+                                                <h3>Kara A.</h3>
+                                            </div>
+                                            <div class="card-text">
+                                                <h4>iMBA Graduate, University of Illinois Gies College of Business</h4>
+                                                <span>It’s a really big deal to offer an online MBA that’s a <strong>real MBA at a price that’s achievable</strong>. This program is totally disrupting higher education.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="card">
+                                        <img class="card-img" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/social-proof/kara.png?auto=format%2Ccompress&dpr=1&w=270&h=202&q=40" alt="">
+                                        <div class="card-body text-center d-md-block d-none">
+                                            <div class="card-title">
+                                                <h3>Kara A.</h3>
+                                            </div>
+                                            <div class="card-text">
+                                                <h4>iMBA Graduate, University of Illinois Gies College of Business</h4>
+                                                <span>It’s a really big deal to offer an online MBA that’s a <strong>real MBA at a price that’s achievable</strong>. This program is totally disrupting higher education.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="card">
+                                        <img class="card-img" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/social-proof/kara.png?auto=format%2Ccompress&dpr=1&w=270&h=202&q=40" alt="">
+                                        <div class="card-body text-center d-md-block d-none">
+                                            <div class="card-title">
+                                                <h3>Kara A.</h3>
+                                            </div>
+                                            <div class="card-text">
+                                                <h4>iMBA Graduate, University of Illinois Gies College of Business</h4>
+                                                <span>It’s a really big deal to offer an online MBA that’s a <strong>real MBA at a price that’s achievable</strong>. This program is totally disrupting higher education.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <div class="col-4">
+                                <div class="card">
+                                    <img class="card-img" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/social-proof/kara.png?auto=format%2Ccompress&dpr=1&w=270&h=202&q=40" alt="">
+                                    <div class="card-body text-center d-md-block d-none">
+                                        <div class="card-title">
+                                            <h3>Kara A.</h3>
+                                        </div>
+                                        <div class="card-text">
+                                            <h4>iMBA Graduate, University of Illinois Gies College of Business</h4>
+                                            <span>It’s a really big deal to offer an online MBA that’s a <strong>real MBA at a price that’s achievable</strong>. This program is totally disrupting higher education.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next" style="right: 0;">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="row py-5 my-5" style="background-color: #ffffb3;">
+
+                <div class="col  d-lg-flex d-none justify-content-end">
+                    <img class="img-flui" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/secondary-consumer-cta/secondary-consumer-hero-img.png?auto=format%2Ccompress&dpr=1&w=400&h=250&q=40" alt="">
+                </div>
+
+                
+                <div class="col d-flex justify-content-lg-start justify-content-center">
+                    <div style="max-width: 60%;">
+                        <h3 class="pb-3 font-weight-bold"><b>Take the next step</b> toward your personal and professional goals with Coursera.</h3>
+                        <p>Join now to receive personalized recommendations from the full Coursera catalog.</p>
+                        <a href="#" class="btn btn-primary">join for Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="d-flex justify-content-center my-5">
+            <div class="row">
+                <div class="col-lg-6 col-12 d-flex  justify-content-lg-end justify-content-center align-items-center my-3">
+                    <div style="max-width: 450px;">
+                        <div class="d-flex align-items-center">
+                            <span class="display-4 font-weight-bold mr-2">2,400+ </span> <span> Coursera for Business customers</span>
+                        </div>
+                        <div class="row d-flex align-items-center">
+                            <div class="col-4 my-3">
+                                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/enterprise-partners/danone.png?auto=format%2Ccompress&dpr=1&w=120&h=40&q=40" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+                            
+                            <div class="col-4 my-3">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/loreal.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4 my-3">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/pandg.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/novartis.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-story/enterprise-partners/telenor.png?auto=format%2Ccompress&dpr=1&w=80&h=36&q=40" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/airbus.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/axisbank.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/accelya.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/tata.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/axa.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+
+                            <div class="col-4">
+                                <img src="https://d2j5ihb19pt1hq.cloudfront.net/front-page-story/enterprise-partners/sk.svg" alt="" class="img-fluid" style="max-width: 80px;">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center my-3">
+                    <!-- <div> -->
+                        <div class="" style="max-width: 500px;">
+                            <h2>Coursera for Business</h2>
+                            <P>We’ve got the solution: world-class training and development programs developed by top universities and companies. All on Coursera for Business.</P>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="py-5" style="background-color: #eee;">
+            <div class="container">
+                <div class="row row-cols-lg-4 row-cols-1">
+                    <div class="col d-flex flex-column">
+                        <h4 class="h6 font-weight-bold mb-3">Top Online Courses</h4>
+                        <ul class="list-unstyled">
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                            
+                        </ul>
+                    </div>
+    
+                    <div class="col d-flex flex-column">
+                        <h4 class="h6 font-weight-bold mb-3">Top Online Courses</h4>
+                        <ul class="list-unstyled">
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                            
+                        </ul>
+                    </div>
+    
+                    <div class="col d-flex flex-column">
+                        <ul class="list-unstyled">
+                            <h4 class="h6 font-weight-bold mb-3">Online Certificates</h4>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                         
+                        </ul>
+                    </div>
+        
+                    <div class="col d-flex flex-column">
+                        <h4 class="h6 font-weight-bold mb-3">Top Online Courses</h4>
+                        <ul class="list-unstyled">
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                          
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row row-cols-lg-4 row-cols-2">
+                    <div class="col d-flex flex-column">
+                        <h4 class="h6 font-weight-bold mb-3">Coursera</h4>
+                        <ul class="list-unstyled">
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                          
+                        </ul>
+                    </div>
+    
+                    <div class="col d-flex flex-column">
+                        <h4 class="h6 font-weight-bold mb-3">Community</h4>
+                        <ul class="list-unstyled">
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                          
+                        </ul>
+                    </div>
+    
+                    <div class="col d-flex flex-column">
+                        <h4 class="h6 font-weight-bold mb-3">More</h4>
+                        <ul class="list-unstyled">
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>
+                            <li class="my-1"><a href="#" class="text-dark">This is footer link</a></li>                          
+                        </ul>
+                    </div>
+
+                    <div class="col d-flex flex-column align-items-around justify-content-around">
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/web/images/icons/download_on_the_app_store_badge_en.svg" alt="" style="width: 150px;">
+                        </a>
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/web/images/icons/en_generic_rgb_wo_45.png" alt="" style="width: 150px;">
+                        </a>
+                     </div>
+                </div>
+<hr class="d-md-block d-none">
+                <div class="row row-cols-lg-2 row-cols-1 align-items-center flex-row-reverse">
+                    <div class="col d-flex justify-content-around mt-3">
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/facebook.png?auto=format%2Ccompress&dpr=1&w=28&h=28" alt="" style="width: 48px;">
+                        </a>
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/linkedin.png?auto=format%2Ccompress&dpr=1&w=28&h=28" alt="" style="width: 48px;">
+                        </a>
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/twitter.png?auto=format%2Ccompress&dpr=1&w=28&h=28" alt="" style="width: 48px;">
+                        </a>
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/youtube.png?auto=format%2Ccompress&dpr=1&w=28&h=28" alt="" style="width: 48px;">
+                        </a>
+                        <a href="#">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/instagram.png?auto=format%2Ccompress&dpr=1&w=28&h=28" alt="" style="width: 48px;">
+                        </a>
+                    </div>
+<hr class="d-sm-block d-md-none">
+                    <div class="col d-flex mt-3">
+                        &copy; 2020 Coursera Inc. All rights reserved.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </footer>
+
+
+    <!-- </div> -->
+    
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+        $("#login-signup").on( "click", function () {
+            $('#sign-up-modal').modal('toggle');
+            $('#log-in-modal').modal('toggle');
+        });
+
+        $("#signup-login").on( "click", function () {
+            $('#sign-up-modal').modal('toggle');
+            $('#log-in-modal').modal('toggle');
+        });
+    </script>
+</body>
+</html>

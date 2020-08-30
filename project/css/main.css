@@ -1,0 +1,121 @@
+@import url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css');
+
+html body {
+    /* direction: rtl; */
+    /* text-align: right; */
+    /* font-family: Shabnam; */
+    /* max-width: 100% !important; */
+    /* width: 1920 !important; */
+    overflow-x: hidden;
+    /* font-size: 1.2em; */
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header_color {
+    background-color: rgb(71, 10, 160);
+}
+.gradient-img {
+    /* background-image: linear-gradient(to right, #7d07e9, #9151f3, #a77dfa, #bea5fe, #d8ccff, #d8ccff, #d8ccff, #d8ccff, #bea5fe, #a77dfa, #9151f3, #7d07e9), url("/project//img/learning1.jpeg"); */
+    /* background-image: linear-gradient(to right, rgb(71, 10, 160) 10%, rgba(152, 7, 233, 0) 50%, rgb(71, 10, 160) 90%), url("/project//img/learning1.jpeg"); */
+    /* background-image: linear-gradient(to right, rgb(71, 10, 160) 100%, rgba(152, 7, 233, 1) 50%, rgb(71, 100, 160) 100%); */
+    /* background-image: linear-gradient(to right, red 33%, green 33%, blue 50%), url("/project//img/learning1.jpeg"); */
+    /* width: 100%; */
+    /* height: 400px; */
+    /* background-size: cover; */
+}
+.img-gradient{
+    position:relative;
+    /* display:inline-flex; */
+  }
+  
+  
+  /* 
+  #002f4b,#dc4225 
+  Convert HEX to RGBA - http://hex2rgba.devoth.com/
+  */
+  .img-gradient:after {
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+    display:inline-block;
+     background: -webkit-linear-gradient(left, rgb(50, 0, 100) 0%, rgba(50, 0, 100, 0.5) 40%, rgba(50, 0, 100, 0) 80%, rgb(50, 0, 100) 100%); 
+  }
+  .img-light-gradient:after {
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+    display:inline-block;
+    /* background: -moz-linear-gradient(left, rgb(71,10,160) 10%, rgba(152, 7, 233, 0) 50%, rgb(71, 10, 160) 90%); */
+     /* FF3.6+ */
+    /* background: -webkit-gradient(linear, left top,(100%,rgba(0,47,75,0.5))); */
+     /* Chrome,Safari4+ */
+     /* background: -webkit-linear-gradient(left, rgb(46, 4, 109) 0%, rgba(46, 4, 109, 0.5) 40%, rgba(46, 4, 109, 0) 80%, rgb(46, 4, 109) 100%);  */
+     background: -webkit-linear-gradient(left, rgba(50, 0, 100, 0.6) 0%, rgba(50, 0, 100, 0.6) 100%); 
+     /* Chrome10+,Safari5.1+ */
+    /* background: -o-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); */
+     /* Opera 11.10+ */
+    /* background: -ms-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%);  */
+    /* IE10+ */
+    /* background: linear-gradient(left, rgb(71,10,160) 0%, rgba(152, 7, 233, 0) 1%, rgb(71, 10, 160) 90%);  */
+    /* W3C */
+  }
+  .img-gradient img{
+    display:inline-flex;
+  }
+  .flex-flow {
+      flex-flow: column;
+  }
+
+.navbar-nav {
+    direction: rtl;
+}
+.bg-transparent {
+    background-color: rgba(200, 200, 200, 0.6) !important;
+}
+.navbar {
+    /* font-size: 1.3rem; */
+}
+.nav-link {
+    padding: .5rem 1rem !important;
+}
+.carousel-control-next {
+    right: -10% !important;
+}
+.carousel-control-prev {
+    left: -10% !important;
+}
+.carousel-control-next-icon{
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>") !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+.carousel-control-prev-icon{
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'>  <path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>") !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+.modal-header {
+    background: none;
+}
+.half-hr {
+    height: 1px;
+    background-color: rgb(225, 225, 225);
+    margin: 0px;
+    /* border-width: initial; */
+    /* border-style: none; */
+    /* border-color: initial; */
+    /* border-image: initial; */
+    flex: 1 1 0%;
+}
